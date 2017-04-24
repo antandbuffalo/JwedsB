@@ -1,1 +1,8 @@
 /* Empty. Add your own CSS if you like */
+.invitation-content {
+  background: url(../img/paper_texture247.jpg) center no-repeat;
+  color: #fbda57;
+  font-size: 24px;
+  line-height: 1.5;
+  padding: 10px;
+}

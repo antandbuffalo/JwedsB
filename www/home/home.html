@@ -2,16 +2,50 @@
   <ion-content>
     <h1 class="title">Title will be here</h1>
     <div class="invitation-content">
-      I have never seen her till then. Never knew she was right there in my neighborhood. But when I met her, I knew this is for life.
+      I have never seen her till then.
+      <br>
+      Never knew she was right there in my neighborhood.
+      <br>
+      But when I met her, I knew this is for life.
+      <br>
+      <br>
+      <br>
 
-      Request the pleasure of your company at the celebration of our wedding.
+      Request the pleasure of your company at the celebration of our wedding
+
+      <h3>
+        T M Jeyabalaji
+        <br>
+        with
+        <br>
+        M L Bavani
+        <br>
+        <br>
+        With our parents' blessings we are stepping into our new life, together, on
+        <br>
+        <br>
+        Sunday, 4th June 2017
+        <br>
+        <br>
+        Muhurtham
+        <br>
+        9.30 AM to 10.30 AM
+      </h2>
     </div>
 
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
-        <img ng-src="{{chat.face}}">
-        <h2>{{chat.name}}</h2>
-        <p>{{chat.lastText}}</p>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+        <h2>Bride Venue</h2>
+        <p>Some text here</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+        <h2>Groom Venue</h2>
+        <p>Some text here</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
 
         <ion-option-button class="button-assertive" ng-click="remove(chat)">

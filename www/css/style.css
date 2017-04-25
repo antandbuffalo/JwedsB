@@ -1,11 +1,14 @@
 /* Empty. Add your own CSS if you like */
-.invitation-content {
+.invitation-content, .invitation-content h3 {
   /*background: url(../img/paper_bg.jpg) center no-repeat;*/
   color: #fbda57;
   font-size: 24px;
   line-height: 1.5;
   padding: 10px;
+  text-align: center;
 }
+
+
 
 html {
   background: url(../img/paper_bg.jpg) no-repeat center center fixed;
@@ -15,9 +18,11 @@ html {
   background-size: cover;
 }
 .title {
+  padding: 20px 0;
   color: #fbda57;
   font-size: 32px;
   text-align: center;
+  border-bottom: 1px solid;
 }
 .pane {
   background-color: transparent;

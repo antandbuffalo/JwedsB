@@ -1,8 +1,24 @@
 /* Empty. Add your own CSS if you like */
 .invitation-content {
-  background: url(../img/paper_texture247.jpg) center no-repeat;
+  /*background: url(../img/paper_bg.jpg) center no-repeat;*/
   color: #fbda57;
   font-size: 24px;
   line-height: 1.5;
   padding: 10px;
+}
+
+html {
+  background: url(../img/paper_bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.title {
+  color: #fbda57;
+  font-size: 32px;
+  text-align: center;
+}
+.pane {
+  background-color: transparent;
 }

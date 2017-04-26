@@ -28,6 +28,11 @@ angular.module('starter', ['ionic'])
         url: '/home',
         templateUrl: 'home/home.html',
         controller: 'HomeController'
+    })
+    .state('home-board', {
+        url: '/home-board',
+        templateUrl: 'homeboard/home.board.html',
+        controller: 'HomeBoardController'
     });
   $urlRouterProvider.otherwise('/home');
 })

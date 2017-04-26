@@ -18,7 +18,7 @@
 
     function calculateRemaining() {
       var today = new Date().getTime();
-      var marriageDate = new Date("2017-06-04 09:30").getTime();
+      var marriageDate = new Date(1496539800000).getTime();
       var remaining = marriageDate - today;
       var days = parseInt(remaining / ONE_DAY);
 

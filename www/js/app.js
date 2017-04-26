@@ -34,5 +34,5 @@ angular.module('starter', ['ionic'])
         templateUrl: 'homeboard/home.board.html',
         controller: 'HomeBoardController'
     });
-  $urlRouterProvider.otherwise('/home');
+  $urlRouterProvider.otherwise('/home-board');
 })

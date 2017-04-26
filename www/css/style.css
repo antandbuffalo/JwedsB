@@ -68,7 +68,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#866048', end
 .board-content label {
   display: block;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 500;
 }
 .board-content .groom {
     margin-top: 10px;
@@ -91,20 +91,28 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#866048', end
 .board-content .remaining {
   margin-top: 15px;
 }
-.remaining-top {
-  /*border: 1px solid;*/
-  border-radius: 100px;
+.rem-days-big {
+
+}
+.remaining-big {
+  /*border: 1px solid;
   height: 200px;
-  width: 200px;
+  width: 200px;*/
+  border-radius: 100px;
   text-align: center;
   display: inline-block;
+  margin-left: 10px;
 }
-.remaining-top label {
+.remaining-big label {
   display: block;
   font-size: 24px;
   /*font-weight: lighter;*/
 }
-.remaining-top label:first-child {
+.remaining-big label:first-child {
   /*margin-top: 60px;*/
   font-size: 100px;
+  font-weight: 200;
+}
+.remaining-subtitle {
+  font-size: 20px;
 }

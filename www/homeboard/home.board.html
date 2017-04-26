@@ -1,18 +1,24 @@
 <ion-view class="bg-gradient">
-    <h1 class="title">Title here</h1>
+    <h1 class="title">Wedding Invitation</h1>
     <div class="invitation-content">
-
+      <div class="remaining-top">
+        <label>{{days}}</label>
+        <label>days to go</label>
+        <!-- <label>{{hours}}:{{minutes}}:{{seconds}}</label> -->
+      </div>
     </div>
     <div class="bg-board">
         <div class="board-content">
-          <label class="groom">Firstname Lastname</label>
-          <label class="joiner">abcd</label>
-          <label class="bride">Firstname Lastname</label>
-          <label class="date">Date Date Date</label>
-          <button class="btn btn-defalut come-in" ng-click="description()">
-            <i class="ion-android-arrow-forward" ></i>
-          </button>
+          <label class="groom">Jeyabalaji</label>
+          <label class="joiner">weds</label>
+          <label class="bride">Bavani</label>
+          <label class="date">04 June 2017</label>
+          <div class="remaining">
+            <label>{{remaining}}</label>
+            <span class="come-in" ng-click="description()">
+              <i class="ion-android-arrow-forward" ></i>
+            </span>
+          </div>
         </div>
-
     </div>
 </ion-view>

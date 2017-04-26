@@ -60,7 +60,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#866048', end
   background-position: bottom;
 }
 .board-content {
-  color: #ffbd91;
+  /*color: #ffbd91;*/
+  color: #fbda57;
   text-align: center;
   margin-top: 20px;
 }
@@ -83,7 +84,27 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#866048', end
 }
 .board-content .come-in {
   font-size: 40px;
-  margin-left: 300px;
+  margin-left: 110px;
+  margin-top: -30px;
+  position: absolute;
+}
+.board-content .remaining {
+  margin-top: 15px;
+}
+.remaining-top {
+  /*border: 1px solid;*/
+  border-radius: 100px;
+  height: 200px;
+  width: 200px;
+  text-align: center;
+  display: inline-block;
+}
+.remaining-top label {
   display: block;
-  color: #ffbd91;
+  font-size: 24px;
+  /*font-weight: lighter;*/
+}
+.remaining-top label:first-child {
+  /*margin-top: 60px;*/
+  font-size: 100px;
 }

@@ -1,8 +1,8 @@
 (function() {
-  angular.module("starter").controller("HomeBoardController", function($scope, $interval) {
+  angular.module("starter").controller("HomeBoardController", function($scope, $interval, $location) {
 
     $scope.description = function() {
-
+      $location.path("/home");
     };
 
     var ONE_DAY = 24 * 60 * 60 * 1000;
@@ -20,6 +20,15 @@
       var today = new Date().getTime();
       var marriageDate = new Date(1496539800000).getTime();
       var remaining = marriageDate - today;
+
+      if(remaining < 0) {
+        $scope.days = 0;
+        $scope.hours = 0;
+        $scope.minutes = 0;
+        $scope.seconds = 0;
+        $scope.remaining = "0 days to go";
+        return;
+      }
       var days = parseInt(remaining / ONE_DAY);
 
       var daysRemainder = remaining % ONE_DAY;

@@ -1,14 +1,39 @@
-/* Empty. Add your own CSS if you like */
-.invitation-content, .invitation-content h3 {
-  /*background: url(../img/paper_bg.jpg) center no-repeat;*/
-  color: #fbda57;
-  font-size: 24px;
-  line-height: 1.5;
-  padding: 10px;
-  text-align: center;
+@font-face {
+    font-family: alexbrush;
+    src: url(fonts/AlexBrush-Regular.ttf);
+}
+@font-face {
+    font-family: dancing;
+    src: url(fonts/DancingScript.ttf);
+}
+@font-face {
+    font-family: greatvibes;
+    src: url(fonts/GreatVibes-Regular.ttf);
+}
+@font-face {
+    font-family: heavenmatters;
+    src: url(fonts/HeavenMatters.ttf);
+}
+@font-face {
+    font-family: italianno;
+    src: url(fonts/Italianno-Regular.ttf);
+}
+@font-face {
+    font-family: janda;
+    src: url(fonts/JandaCelebrationScript.ttf);
+}
+@font-face {
+    font-family: handycheera;
+    src: url(fonts/Handycheera.otf);
+}
+@font-face {
+    font-family: lietome;
+    src: url(fonts/LietoMe.ttf);
 }
 
+.wedding-one {
 
+}
 
 html {
   /*background: url(../img/paper_bg.jpg) no-repeat center center fixed;*/
@@ -24,6 +49,26 @@ html {
   background: -ms-linear-gradient(top, rgba(134,96,72,1) 0%, rgba(182,141,76,1) 84%, rgba(182,141,76,1) 100%);
   background: linear-gradient(to bottom, rgba(134,96,72,1) 0%, rgba(182,141,76,1) 84%, rgba(182,141,76,1) 100%);*/
 }
+.bg-gradient-content1 {
+  background: rgba(194,152,128,1);
+  background: -moz-radial-gradient(center, ellipse cover, rgba(194,152,128,1) 0%, rgba(129,92,70,1) 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(194,152,128,1)), color-stop(100%, rgba(129,92,70,1)));
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(194,152,128,1) 0%, rgba(129,92,70,1) 100%);
+  background: -o-radial-gradient(center, ellipse cover, rgba(194,152,128,1) 0%, rgba(129,92,70,1) 100%);
+  background: -ms-radial-gradient(center, ellipse cover, rgba(194,152,128,1) 0%, rgba(129,92,70,1) 100%);
+  background: radial-gradient(ellipse at center, rgba(194,152,128,1) 0%, rgba(129,92,70,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c29880', endColorstr='#815c46', GradientType=1 );
+}
+.bg-gradient-content {
+  background: rgba(201,157,130,1);
+background: -moz-radial-gradient(center, ellipse cover, rgba(201,157,130,1) 0%, rgba(129,92,70,1) 100%);
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(201,157,130,1)), color-stop(100%, rgba(129,92,70,1)));
+background: -webkit-radial-gradient(center, ellipse cover, rgba(201,157,130,1) 0%, rgba(129,92,70,1) 100%);
+background: -o-radial-gradient(center, ellipse cover, rgba(201,157,130,1) 0%, rgba(129,92,70,1) 100%);
+background: -ms-radial-gradient(center, ellipse cover, rgba(201,157,130,1) 0%, rgba(129,92,70,1) 100%);
+background: radial-gradient(ellipse at center, rgba(201,157,130,1) 0%, rgba(129,92,70,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c99d82', endColorstr='#815c46', GradientType=1 );
+}
 .bg-gradient {
   background: rgba(134,96,72,1);
 background: -moz-linear-gradient(top, rgba(134,96,72,1) 0%, rgba(203,161,134,1) 52%, rgba(203,161,134,1) 100%);
@@ -34,12 +79,27 @@ background: -ms-linear-gradient(top, rgba(134,96,72,1) 0%, rgba(203,161,134,1) 5
 background: linear-gradient(to bottom, rgba(134,96,72,1) 0%, rgba(203,161,134,1) 52%, rgba(203,161,134,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#866048', endColorstr='#cba186', GradientType=0 );
 }
+.invitation-content, .invitation-content h3 {
+  /*background: url(../img/paper_bg.jpg) center no-repeat;*/
+  color: #fbda57;
+  font-size: 24px;
+  line-height: 1;
+  padding: 10px;
+  text-align: center;
+  font-size: 40px;
+  font-family: italianno;
+}
 .title {
   padding: 20px 0;
   color: #fbda57;
   font-size: 32px;
   text-align: center;
-  border-bottom: 1px solid;
+  /*border-bottom: 1px solid;*/
+  font-size: 80px;
+  font-family: janda;
+}
+.naming {
+  font-size: 70px;
 }
 .pane {
   background-color: transparent;
@@ -92,7 +152,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#866048', end
   margin-top: 15px;
 }
 .rem-days-big {
-
+  color: #fbda57;
+  font-size: 24px;
+  text-align: center;
+  font-size: 40px;
+  margin-top: -40px;
 }
 .remaining-big {
   /*border: 1px solid;
@@ -115,4 +179,5 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#866048', end
 }
 .remaining-subtitle {
   font-size: 20px;
+  margin-left: -5px;
 }

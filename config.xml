@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.jwedsb709343" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.antandbuffalo.jwedsb" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>JwedsB</name>
   <description>
         An Ionic Framework and Cordova project.
     </description>
-  <author email="you@example.com" href="http://example.com/">
+  <author email="balaji.jeya@gmail.com">
       Your Name Here
     </author>
   <content src="index.html"/>
   <access origin="*"/>
+  <access origin="tel:*" launch-external="yes" />
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>

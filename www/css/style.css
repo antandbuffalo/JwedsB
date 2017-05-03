@@ -92,10 +92,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#866048', end
 .title {
   padding: 20px 0;
   color: #fbda57;
-  font-size: 32px;
   text-align: center;
   /*border-bottom: 1px solid;*/
   font-size: 80px;
+  /*font-size: 600%;*/
   font-family: janda;
 }
 .naming {
@@ -180,4 +180,29 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#866048', end
 .remaining-subtitle {
   font-size: 20px;
   margin-left: -5px;
+}
+.venue {
+  color: #fbda57;
+  line-height: 1;
+  padding: 10px;
+  font-size: 35px;
+  font-family: italianno;
+  text-align: center;
+}
+.venue label.title {
+  font-size: 40px;
+  font-family: italianno;
+  font-size: 50px;
+}
+.contact {
+  font-family: italianno;
+  text-align: center;
+  font-size: 34px;
+}
+.contact .icon {
+  color: #fbda57;
+  display: inline-block;
+}
+.contact a {
+  color: #fbda57;
 }

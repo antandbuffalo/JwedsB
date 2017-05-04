@@ -33,6 +33,11 @@ angular.module('starter', ['ionic'])
         url: '/home-board',
         templateUrl: 'homeboard/home.board.html',
         controller: 'HomeBoardController'
+    })
+    .state('invitation-classic', {
+        url: '/invitation-classic',
+        templateUrl: 'invitationclassic/invitation.classic.html',
+        controller: 'InvitationClassicController'
     });
   $urlRouterProvider.otherwise('/home-board');
 })

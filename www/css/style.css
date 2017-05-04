@@ -206,3 +206,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#866048', end
 .contact a {
   color: #fbda57;
 }
+.extra-info {
+  color: #fbda57;
+  font-family: italianno;
+}
+.item {
+  background: none;
+  border-color: #fbda57;
+  font-size: 34px;
+}
+.item.activated {
+  background-color: #5f4231;
+  border-color: #fbda57;
+}
+.invitation-classic {
+  width: 100%;
+}

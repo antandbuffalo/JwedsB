@@ -1,30 +1,33 @@
 (function() {
   angular.module("starter").controller("InvitationClassicController", function($scope) {
 
-    function getBase64Image(img) {
+    function getBase64Image(path) {
     // Create an empty canvas element
-      var canvas = document.createElement("canvas");
-      canvas.width = img.width;
-      canvas.height = img.height;
+      image = document.createElement('img');
+      document.body.appendChild(image);
+      image.setAttribute('style','display:none');
+      image.setAttribute('alt','script div');
+      image.setAttribute("src", path);
 
-      // Copy the image contents to the canvas
-      var ctx = canvas.getContext("2d");
-      ctx.drawImage(img, 0, 0);
+      var imgCanvas = document.createElement("canvas"),
+      imgContext = imgCanvas.getContext("2d");
 
-      // Get the data-URL formatted image
-      // Firefox supports PNG and JPEG. You could check img.src to
-      // guess the original format, but be aware the using "image/jpg"
-      // will re-encode the image.
-      var dataURL = canvas.toDataURL("image/png");
+      // Make sure canvas is as big as the picture
+      imgCanvas.width = image.width;
+      imgCanvas.height = image.height;
 
-      return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+      // Draw image into canvas element
+      imgContext.drawImage(image, 0, 0, image.width, image.height);
+      // Save image as a data URL
+      imgInfom = imgCanvas.toDataURL("image/png");
+      document.body.removeChild(image);
+      return imgInfom;
   }
 
-    $scope.openFile = function() {
-
-      console.log(getBase64Image("../img/invitationclassic1.jpg"));
-      return;
-      window.cordova.plugins.FileOpener.openFile("../img/invitationclassic1.jpg", function(success) {
+    $scope.openFile = function(imageName) {
+      alert("coming");
+      var base64String = getBase64Image("img/" + imageName);
+      cordova.plugins.fileOpener2.open("img/invitationclassic2.jpg", "application/image", function(success) {
         console.log("success ", success);
         alert("success " + JSON.stringify(success));
       }, function(error) {

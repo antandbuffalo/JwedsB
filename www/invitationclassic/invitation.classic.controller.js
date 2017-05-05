@@ -25,7 +25,7 @@
   }
 
     $scope.openFile = function(imageName) {
-      alert("coming");
+      alert("coming " + imageName);
       var base64String = getBase64Image("img/" + imageName);
       cordova.plugins.fileOpener2.open("img/invitationclassic2.jpg", "application/image", function(success) {
         console.log("success ", success);

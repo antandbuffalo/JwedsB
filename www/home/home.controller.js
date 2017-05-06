@@ -1,6 +1,7 @@
 (function() {
   angular.module("starter").controller("HomeController", function($scope) {
     $scope.navigateToMap = function(type) {
+      //https://github.com/dpa99c/phonegap-launch-navigator
       var location = [];
       if(type === "groom") {
         location = [9.5395581,78.592895];

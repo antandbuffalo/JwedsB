@@ -24,8 +24,38 @@
       return imgInfom;
   }
 
+  function writeFile() {
+
+    window.resolveLocalFileSystemURL(cordova.file.dataDirectory, function(dir) {
+      alert(dir);
+      console.log("got main dir",dir);
+        // dir.getFile("log.txt", {create:true}, function(file) {
+        //     console.log("got the file", file);
+        //     logOb = file;
+        //     writeLog("App started");
+        // });
+    });
+    return;
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
+      var documentsPath = fileSystem.root;
+      fileDB.copyTo(documentsPath, 'myDB.db',
+      function(){
+          console.log('copying was successful')
+      },
+      function(){
+          console.log('unsuccessful copying')
+      });
+    }, function(error) {
+      console.log("Not able to get filesystem - ", error);
+    });
+  }
+
     $scope.openFile = function(imageName) {
       alert("coming " + imageName);
+      writeFile();
+      return;
+
+
       var base64String = getBase64Image("img/" + imageName);
       cordova.plugins.fileOpener2.open("img/invitationclassic2.jpg", "application/image", function(success) {
         console.log("success ", success);

@@ -42,7 +42,7 @@ html {
   /*background: #866048;*/
   /*background-size: cover;*/
 }
-.bg-gradient-content1 {
+.bg-gradient-content1-bak {
   background: rgba(194,152,128,1);
   background: -moz-radial-gradient(center, ellipse cover, rgba(194,152,128,1) 0%, rgba(129,92,70,1) 100%);
   background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(194,152,128,1)), color-stop(100%, rgba(129,92,70,1)));
@@ -50,6 +50,16 @@ html {
   background: -o-radial-gradient(center, ellipse cover, rgba(194,152,128,1) 0%, rgba(129,92,70,1) 100%);
   background: -ms-radial-gradient(center, ellipse cover, rgba(194,152,128,1) 0%, rgba(129,92,70,1) 100%);
   background: radial-gradient(ellipse at center, rgba(194,152,128,1) 0%, rgba(129,92,70,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c29880', endColorstr='#815c46', GradientType=1 );
+}
+.bg-gradient-content1 {
+  background: rgb(144, 103, 79);
+  background: -moz-radial-gradient(center, ellipse cover,  0%, rgba(95, 66, 49, 1) 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgb(144, 103, 79)), color-stop(100%, rgba(95, 66, 49, 1)));
+  background: -webkit-radial-gradient(center, ellipse cover, rgb(144, 103, 79) 0%, rgba(95, 66, 49, 1) 100%);
+  background: -o-radial-gradient(center, ellipse cover, rgb(144, 103, 79) 0%, rgba(95, 66, 49, 1) 100%);
+  background: -ms-radial-gradient(center, ellipse cover, rgb(144, 103, 79) 0%, rgba(95, 66, 49, 1) 100%);
+  background: radial-gradient(ellipse at center, rgb(144, 103, 79) 0%, rgba(95, 66, 49, 1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c29880', endColorstr='#815c46', GradientType=1 );
 }
 .bg-gradient-content {
@@ -62,7 +72,7 @@ background: -ms-radial-gradient(center, ellipse cover, rgba(201,157,130,1) 0%, r
 background: radial-gradient(ellipse at center, rgba(201,157,130,1) 0%, rgba(129,92,70,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c99d82', endColorstr='#815c46', GradientType=1 );
 }
-.bg-gradient {
+.bg-gradient-bak {
   background: rgba(134,96,72,1);
 background: -moz-linear-gradient(top, rgba(134,96,72,1) 0%, rgba(203,161,134,1) 52%, rgba(203,161,134,1) 100%);
 background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(134,96,72,1)), color-stop(52%, rgba(203,161,134,1)), color-stop(100%, rgba(203,161,134,1)));
@@ -71,6 +81,16 @@ background: -o-linear-gradient(top, rgba(134,96,72,1) 0%, rgba(203,161,134,1) 52
 background: -ms-linear-gradient(top, rgba(134,96,72,1) 0%, rgba(203,161,134,1) 52%, rgba(203,161,134,1) 100%);
 background: linear-gradient(to bottom, rgba(134,96,72,1) 0%, rgba(203,161,134,1) 52%, rgba(203,161,134,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#866048', endColorstr='#cba186', GradientType=0 );
+}
+.bg-gradient {
+  background: rgba(95, 66, 49, 1);
+  background: -moz-linear-gradient(top, rgba(134,96,72,1) 20%, rgba(203,161,134,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(20%, rgba(95, 66, 49, 1)), color-stop(100%, rgba(203,161,134,1)));
+  background: -webkit-linear-gradient(top, rgba(95, 66, 49, 1) 20%, rgba(203,161,134,1) 100%);
+  background: -o-linear-gradient(top, rgba(95, 66, 49, 1) 20%, rgba(203,161,134,1) 100%);
+  background: -ms-linear-gradient(top, rgba(95, 66, 49, 1) 20%, rgba(203,161,134,1) 100%);
+  background: linear-gradient(to bottom, rgba(95, 66, 49, 1) 20%, rgba(203,161,134,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#866048', endColorstr='#cba186', GradientType=0 );
 }
 .invitation-content, .invitation-content h3 {
   /*background: url(../img/paper_bg.jpg) center no-repeat;*/
@@ -200,6 +220,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#866048', end
 }
 .contact a {
   color: #fbda57;
+}
+.contact span {
+  text-decoration: underline;
+}
+.contact i {
+  font-size: 20px;
+}
+.contact .route {
+  margin-left: 40px;
+}
+i.route {
+  font-size: 22px;
 }
 .extra-info {
   color: #fbda57;

@@ -54,12 +54,26 @@
       */
 
     });
-  }
+  };
+
+  function copyToSdCard(imageName) {
+    //https://github.com/gkcgautam/Asset2SD
+    asset2sd.copyFile({
+    		asset_file: "www/img/" + imageName,
+    		destination_file: "JwedsB/" + imageName
+    	},
+    	function() { alert('success'); },
+    	function() { alert('fail'); }
+    );
+  };
 
     $scope.openFile = function(imageName) {
-      return;
-      alert("coming " + imageName);
-      writeFile(imageName);
+      copyToSdCard(imageName);
+      //https://github.com/SpiderOak/FileViewerPlugin
+      //https://github.com/markeeftb/FileOpener
+      //return;
+      // alert("coming " + imageName);
+      // writeFile(imageName);
     }
   });
 })();

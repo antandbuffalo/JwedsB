@@ -1,6 +1,7 @@
 (function() {
-  angular.module("starter").controller("HomeBoardController", function($scope, $interval, $location) {
+  angular.module("starter").controller("HomeBoardController", function($scope, $interval, $location, $timeout) {
 
+    var marriageDate = new Date(1496539800000).getTime();
     $scope.description = function() {
       $location.path("/home");
     };
@@ -18,7 +19,6 @@
 
     function calculateRemaining() {
       var today = new Date().getTime();
-      var marriageDate = new Date(1496539800000).getTime();
       var remaining = marriageDate - today;
 
       if(remaining < 0) {
@@ -47,6 +47,22 @@
       $scope.seconds = seconds;
     };
     $interval(calculateRemaining, 1000);
+
+    function setLocalNotification() {
+      //https://ionicframework.com/docs/native/local-notifications/
+      $timeout(function() {
+
+        cordova.plugins.notification.local.schedule({
+          id: 1,
+          title: "Jeyabalaji weds Bavani",
+          text: "04 June 2017, 9:30 am to 10:30 am",
+          at: new Date().getTime() + 6000,
+          icon: 'res://ic_stat_onesignal_default',
+          color: "866048"
+        });
+      }, 5000);
+    };
+    setLocalNotification();
 
   });
 })();

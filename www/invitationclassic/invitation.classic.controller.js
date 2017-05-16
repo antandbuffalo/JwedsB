@@ -74,7 +74,6 @@
 
     $scope.openFile = function(imageName) {
       copyToSdCard(imageName);
-      //https://github.com/SpiderOak/FileViewerPlugin
       //https://github.com/markeeftb/FileOpener
       //return;
       // alert("coming " + imageName);

@@ -7,7 +7,7 @@
         location = [9.5395581,78.592895];
       }
       else if(type === "bride") {
-        location = [9.543544,78.5961578];
+        location = [9.543527,78.596746];
       }
       if(location.length === 2) {
         launchnavigator.isAppAvailable(launchnavigator.APP.GOOGLE_MAPS, function(isAvailable){

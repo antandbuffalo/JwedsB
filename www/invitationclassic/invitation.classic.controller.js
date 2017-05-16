@@ -62,8 +62,13 @@
     		asset_file: "www/img/" + imageName,
     		destination_file: "JwedsB/" + imageName
     	},
-    	function() { alert('success'); },
-    	function() { alert('fail'); }
+    	function(success) {
+        //alert('success ' + JSON.stringify(success));
+        window.plugins.fileOpener.open("file:///" + success);
+      },
+    	function(error) {
+        alert("Please insert SD Card");
+      }
     );
   };
 

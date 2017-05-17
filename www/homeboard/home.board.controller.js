@@ -1,7 +1,13 @@
 (function() {
   angular.module("starter").controller("HomeBoardController", function($scope, $interval, $location, $timeout) {
 
-    var marriageDate = new Date(1496539800000).getTime();
+    //var marriageDate = new Date(1496539800000).getTime();
+    var marriageDate = new Date("04-june-2017 09:30:00").getTime();
+    var weddingDay12am = new Date("04-june-2017 00:00:00").getTime();
+    var previousDay = new Date("03-june-2017 09:30:00").getTime();
+    var previousWeek = new Date("28-may-2017 09:30:00").getTime();
+    var today = new Date().getTime();
+
     $scope.description = function() {
       $location.path("/home");
     };
@@ -18,9 +24,7 @@
     };
 
     function calculateRemaining() {
-      var today = new Date().getTime();
       var remaining = marriageDate - today;
-
       if(remaining < 0) {
         $scope.days = 0;
         $scope.hours = 0;
@@ -48,21 +52,32 @@
     };
     $interval(calculateRemaining, 1000);
 
-    function setLocalNotification() {
+    function setLocalNotification(time, desc, id) {
       //https://ionicframework.com/docs/native/local-notifications/
       $timeout(function() {
 
         cordova.plugins.notification.local.schedule({
-          id: 1,
+          id: id,
           title: "Jeyabalaji weds Bavani",
-          text: "04 June 2017, 9:30 am to 10:30 am",
-          at: new Date().getTime() + 6000,
+          text: desc,
+          at: time,
           icon: 'res://ic_stat_onesignal_default',
           color: "866048"
         });
-      }, 5000);
+      }, 1000);
     };
-    setLocalNotification();
 
+    if(weddingDay12am >= today) {
+      setLocalNotification(weddingDay12am, "Today, 9:30am to 10:30am", 101);
+    }
+    if(previousDay >= today) {
+      setLocalNotification(previousDay, "Tomorrow, 9:30am to 10:30am", 102);
+    }
+    if(previousWeek >= today) {
+      setLocalNotification(previousWeek, "Next week, Sunday, 9:30am to 10:30am", 103);
+    }
+    if(new Date("17-may-2017 14:10:00").getTime() >= today) {
+      setLocalNotification(new Date("17-may-2017 14:10:00").getTime(), "Testing, Sunday, 9:30am to 10:30am", 104);
+    }
   });
 })();

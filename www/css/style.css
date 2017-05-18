@@ -141,6 +141,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#866048', end
   position: absolute;
   right: 20px;
 }
+.board-content .count-down label {
+  font-size: 16px;
+  bottom: 15px;
+  position: absolute;
+  left: 5px;
+}
 .board-content .remaining {
   margin-top: 15px;
 }

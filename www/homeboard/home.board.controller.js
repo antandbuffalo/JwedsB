@@ -6,6 +6,7 @@
     var weddingDay12am = new Date("04-june-2017 00:00:00").getTime();
     var previousDay = new Date("03-june-2017 09:30:00").getTime();
     var previousWeek = new Date("28-may-2017 09:30:00").getTime();
+    var engagement = new Date("03-june-2017 10:00:00").getTime();
     var today = new Date().getTime();
 
     $scope.description = function() {
@@ -24,6 +25,7 @@
     };
 
     function calculateRemaining() {
+      today = new Date().getTime();
       var remaining = marriageDate - today;
       if(remaining < 0) {
         $scope.days = 0;
@@ -44,7 +46,7 @@
       var minutesRemaining = hoursRemaining % ONE_SEC;
       var seconds = makeItTwoDigit(parseInt(minutesRemaining / 1000));
 
-      $scope.remaining = days + "days " + hours +":" + minutes +":" + seconds;
+      $scope.remaining = hours +":" + minutes +":" + seconds;
       $scope.days = days;
       $scope.hours = hours;
       $scope.minutes = minutes;
@@ -76,8 +78,10 @@
     if(previousWeek >= today) {
       setLocalNotification(previousWeek, "Next week, Sunday, 9:30am to 10:30am", 103);
     }
-    if(new Date("17-may-2017 14:10:00").getTime() >= today) {
-      setLocalNotification(new Date("17-may-2017 14:10:00").getTime(), "Testing, Sunday, 9:30am to 10:30am", 104);
+    if(engagement >= today) {
+      setLocalNotification(engagement, "Engagement, Today evening 7pm to 8pm", 104);
     }
+    //setLocalNotification(new Date("17-may-2017 14:10:00").getTime(), "Engagement, Today evening 7pm to 8pm", 105);
+
   });
 })();

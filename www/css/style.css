@@ -232,6 +232,9 @@ i.route {
   background-color: #5f4231;
   border-color: #fbda57;
 }
+.item i.icon {
+  font-size: 25px;
+}
 .invitation-classic {
   width: 100%;
 }

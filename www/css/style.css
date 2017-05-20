@@ -87,7 +87,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#866048', end
   color: #fbda57;
   text-align: center;
   /*border-bottom: 1px solid;*/
-  font-size: 65px;
+  font-size: 60px;
   /*font-size: 600%;*/
   font-family: janda;
 }
@@ -104,7 +104,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#866048', end
   -o-background-size: cover;
   background-size: contain;
   /*height: 300px;*/
-  bottom: 0;
+  bottom: -20px;
   position: absolute;
   left: 0;
   right: 0;
@@ -137,7 +137,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#866048', end
 }
 .board-content .come-in {
   font-size: 60px;
-  bottom: 5px;
+  bottom: 25px;
   position: absolute;
   right: 20px;
 }
@@ -154,32 +154,27 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#866048', end
   color: #fbda57;
   font-size: 24px;
   text-align: center;
-  font-size: 40px;
-  margin-top: -30px;
+  font-size: 70px;
+  margin-top: -10px;
+  font-family: italianno;
 }
-.remaining-big {
-  /*border: 1px solid;
-  height: 200px;
-  width: 200px;*/
-  border-radius: 100px;
-  text-align: center;
-  display: inline-block;
-  margin-left: 10px;
+.togo {
+  font-family: italianno;
+  font-size: 30px;
 }
-.remaining-big label {
-  display: block;
-  font-size: 24px;
-  /*font-weight: lighter;*/
-}
-.remaining-big label:first-child {
-  /*margin-top: 60px;*/
-  font-size: 80px;
+.time {
+  font-size: 30px;
   font-weight: 200;
-  font-family: janda;
+  font-family: italianno;
+  margin-top: 15px;
 }
+.time span {
+  font-size: 40px;
+}
+
 .remaining-subtitle {
-  font-family: janda;
-  font-size: 20px;
+  font-family: italianno;
+  font-size: 25px;
   margin-left: -10px;
 }
 .venue {
@@ -237,4 +232,15 @@ i.route {
 }
 .invitation-classic {
   width: 100%;
+}
+@media only screen and (max-width: 320px) {
+    .title {
+      font-size: 50px;
+    }
+    .rem-days-big {
+      font-size: 50px;
+    }
+    .time {
+      font-size: 20px;
+    }
 }

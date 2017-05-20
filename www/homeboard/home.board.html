@@ -2,11 +2,21 @@
     <h1 class="title">Wedding Invitation</h1>
     <div>
       <div class="rem-days-big">
-        <div class="remaining-big">
-          <label>{{days}}</label>
+          <span>{{days}}</span>
+          <span class="remaining-subtitle">days</span>
           <!-- <label>{{hours}}:{{minutes}}:{{seconds}}</label> -->
+
+        <div class="time">
+          <!-- <span>{{days}}</span>d &nbsp; -->
+          <span>{{hours}}</span> h &nbsp;
+          <span>{{minutes}}</span> m &nbsp;
+          <span>{{seconds}}</span> s &nbsp;
         </div>
-        <label class="remaining-subtitle">days to go</label>
+        <br />
+        <div class="togo">
+          To Go
+        </div>
+
       </div>
     </div>
     <div class="bg-board">
@@ -18,7 +28,7 @@
           <div class="remaining">
             <!-- <label>{{remaining}}</label> -->
             <div class="count-down">
-              <label>{{remaining}}</label>
+              <!-- <label>{{remaining}}</label> -->
             </div>
             <span class="come-in" ng-click="description()">
               <i class="ion-android-arrow-forward" ></i>

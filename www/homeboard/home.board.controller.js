@@ -2,7 +2,7 @@
   angular.module("starter").controller("HomeBoardController", function($scope, $interval, $location, $timeout) {
 
     //var marriageDate = new Date(1496539800000).getTime();
-    var marriageDate = new Date("04-june-2017 09:30:00").getTime();
+    var marriageDate = new Date("04-june-2017 09:30:00 GMT+0530").getTime();
     var weddingDay12am = new Date("04-june-2017 00:00:00").getTime();
     var previousDay = new Date("03-june-2017 09:30:00").getTime();
     var previousWeek = new Date("28-may-2017 09:30:00").getTime();
@@ -32,7 +32,8 @@
         $scope.hours = 0;
         $scope.minutes = 0;
         $scope.seconds = 0;
-        $scope.remaining = "0 days to go";
+        $scope.remaining = "0 day to go";
+        $scope.daysSubtitle = "day";
         return;
       }
       var days = parseInt(remaining / ONE_DAY);
@@ -51,6 +52,12 @@
       $scope.hours = hours;
       $scope.minutes = minutes;
       $scope.seconds = seconds;
+      if(days <= 1) {
+        $scope.daysSubtitle = "day";
+      }
+      else {
+        $scope.daysSubtitle = "days";
+      }
     };
     $interval(calculateRemaining, 1000);
 

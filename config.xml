@@ -7,10 +7,10 @@
     <author email="balaji.jeya@gmail.com">
       Bavani Jeyabalaji
     </author>
-    <allow-intent href="*.firebaseio.com" />
-    <allow-intent href="auth.firebase.com" />
     <content src="index.html" />
     <access origin="*" />
+    <allow-intent href="*" />
+            
     <access launch-external="yes" origin="tel:*" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />

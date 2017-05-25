@@ -1,5 +1,9 @@
 (function() {
   angular.module("starter").controller("HomeController", function($scope) {
+    $scope.goBack = function() {
+      alert("sadf");
+      window.history.back();
+    };
     $scope.navigateToMap = function(type) {
       //https://github.com/dpa99c/phonegap-launch-navigator
       var location = [];

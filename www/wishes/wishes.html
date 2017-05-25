@@ -1,0 +1,26 @@
+<ion-view class="bg-gradient-content1">
+  <ion-content>
+    <h1 class="title">J weds B</h1>
+    <div class="wish-form">
+      <div class="list">
+        <label class="item item-input">
+          <input type="text" placeholder="Name" ng-model="wish.sender">
+        </label>
+        <label class="item item-input">
+          <textarea placeholder="Your wish" rows="5" ng-model="wish.content"></textarea>
+        </label>
+      </div>
+      <button class="button" ng-disabled="!(wish.sender && wish.content) || disableSend" ng-click="sendWish()">
+        Send
+      </button>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <label class="status" ng-if="showStatus">
+        Successfully Sent
+      </label>
+    </div>
+  </ion-content>
+</ion-view>

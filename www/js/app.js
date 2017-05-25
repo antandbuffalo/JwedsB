@@ -38,6 +38,11 @@ angular.module('starter', ['ionic', 'firebase'])
         url: '/invitation-classic',
         templateUrl: 'invitationclassic/invitation.classic.html',
         controller: 'InvitationClassicController'
+    })
+    .state('wishes', {
+        url: '/wishes',
+        templateUrl: 'wishes/wishes.html',
+        controller: 'WishesController'
     });
   $urlRouterProvider.otherwise('/home-board');
 })

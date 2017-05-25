@@ -7,6 +7,8 @@
     <author email="balaji.jeya@gmail.com">
       Bavani Jeyabalaji
     </author>
+    <allow-intent href="*.firebaseio.com" />
+    <allow-intent href="auth.firebase.com" />
     <content src="index.html" />
     <access origin="*" />
     <access launch-external="yes" origin="tel:*" />

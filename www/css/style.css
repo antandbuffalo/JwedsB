@@ -141,6 +141,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#866048', end
   position: absolute;
   right: 20px;
 }
+.back-button {
+  font-size: 50px;
+  color: #fbda57;
+  position: fixed;
+  top: 5px;
+  left: 5px;
+}
 .board-content .count-down label {
   font-size: 16px;
   bottom: 15px;
@@ -243,4 +250,55 @@ i.route {
     .time {
       font-size: 20px;
     }
+}
+.wish-form {
+  text-align: center;
+}
+.wish-form .item {
+  border: 0px;
+}
+.wish-form button {
+  background: #634533;
+  color: #fbda57;
+  border: 1px solid #543a2a;
+}
+.wish-form button.activated, .wish-form button.active {
+  background: #4e3729;
+  color: #fbda57;
+  border: 1px solid #543a2a;
+}
+.wish-form button:hover {
+  background: #4e3729;
+  color: #fbda57;
+  border: 1px solid #543a2a;
+}
+.wish-form button:active, .wish-form button:activated, .wish-form button:focus {
+  background: #4e3729;
+  color: #fbda57;
+  border: 1px solid #543a2a;
+}
+textarea {
+  margin-right: 16px;
+  font-size: 18px;
+  padding: 5px;
+  background: #634533;
+  color: #fbda57;
+}
+input[type="text"] {
+  color: #fbda57;
+  font-size: 18px;
+  background: #634533;
+  padding: 5px;
+  margin-right: 16px;
+}
+.loading-container .loading {
+  background-color: rgb(99, 69, 51);
+  color: #fbda57;
+}
+.status {
+  color: #fbda57;
+  font-size: 17px;
+  background: #634533;
+  padding: 18px;
+  border-radius: 10px;
 }

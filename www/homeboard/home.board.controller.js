@@ -26,6 +26,8 @@
     initFirebase();
 
     function addData() {
+      //https://www.firebase.com/docs/web/libraries/ionic/guide.html
+      //https://stackoverflow.com/questions/32343417/duplicate-data-on-push-add-to-firebase-using-angularfire
       var ref = firebase.database().ref();
       var list = $firebaseArray(ref);
       list.$add({ name: "Jeyabalaji1", "message": "Happy married Life" }).then(function(ref) {

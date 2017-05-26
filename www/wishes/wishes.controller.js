@@ -6,6 +6,10 @@
     $scope.statusMessage = "Successfully Sent";
     var qbToken = null;
 
+    // <uses-permission android:name="android.permission.INTERNET" />
+    // <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+
     var APP_CONFIG = {
        endpoints: {
            api: "api.quickblox.com", // set custom API endpoint
@@ -109,7 +113,18 @@
       }
     };
 
-    
+    function getService() {
+      $http({
+        method : "GET",
+        url : "https://jsonplaceholder.typicode.com/posts/1"
+      }).then(function mySuccess(response) {
+        console.log(JSON.stringify(response));
+
+      }, function myError(error) {
+        console.log(JSON.stringify(error));
+      });
+    };
+    getService();
 
 
   });

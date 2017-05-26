@@ -1,70 +1,115 @@
 (function() {
-  angular.module("starter").controller("WishesController", function($scope, $firebase, $firebaseObject, $firebaseArray, $ionicLoading, $timeout) {
+  angular.module("starter").controller("WishesController", function($scope, $ionicLoading, $timeout, $http) {
     $scope.wish = {};
     $scope.disableSend = false;
     $scope.showStatus = false;
+    $scope.statusMessage = "Successfully Sent";
+    var qbToken = null;
 
-    function initFirebase() {
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyBzfXN7_0wYOsF6HR7UhPCZST1OYkpqqq0",
-        authDomain: "jwedsb-cb98f.firebaseapp.com",
-        databaseURL: "https://jwedsb-cb98f.firebaseio.com",
-        projectId: "jwedsb-cb98f",
-        storageBucket: "jwedsb-cb98f.appspot.com",
-        messagingSenderId: "300354429526"
+    var APP_CONFIG = {
+       endpoints: {
+           api: "api.quickblox.com", // set custom API endpoint
+           chat: "chat.quickblox.com" // set custom Chat endpoint
+       },
+       chatProtocol: {
+           websocket: "wss://chat.quickblox.com:5291",
+           bosh: "https://chat.quickblox.com:5281",
+           active: 1 // set 1 to use BOSH, set 2 to use WebSockets (default)
+       }
+       //debug: {mode: 1} // set DEBUG mode
+  };
+  var CREDENTIALS = {
+      appId: 58353,
+      authKey: 'uaJSFbMW2JSv6OO',
+      authSecret: 'C7EVUGEMy3nJe6a'
+  };
+
+  var config = {
+      on: {
+          //callback function for session expiration
+          sessionExpired: function() {
+              console.log("session expired");
+              qbToken = null;
+          }
+      }
+  };
+
+    var settings = {};
+    settings["APP_CONFIG"] = APP_CONFIG;
+    settings["CREDENTIALS"] = CREDENTIALS;
+    settings.APP_CONFIG.on = config.on;
+    QB.init(settings.CREDENTIALS.appId, settings.CREDENTIALS.authKey, settings.CREDENTIALS.authSecret, settings.APP_CONFIG);
+
+    function createSession() {
+      var user = {
+        id: 28146068,
+        name: 'JwedsB',
+        login: 'jwedsb',
+        pass: 'jwedsbjwedsb'
       };
-      firebase.initializeApp(config);
-      alert("init db ok");
-      //writeUserData();
-      //addData();
-      readData();
-    };
 
-    function addData(wish) {
-      //https://www.firebase.com/docs/web/libraries/ionic/guide.html
-      //https://stackoverflow.com/questions/32343417/duplicate-data-on-push-add-to-firebase-using-angularfire
-      var ref = firebase.database().ref();
-      var list = $firebaseArray(ref);
-      $scope.disableSend = true;
-      list.$add(wish).then(function(ref) {
-        $scope.disableSend = false;
-        console.log(ref);
-        $scope.wish = {};
-
-        //$ionicLoading.show({ template: 'Successfully sent', noBackdrop: true, duration: 2000 });
-        $scope.showStatus = true;
-        $timeout(function() {
-          $scope.showStatus = false;
-        }, 2000);
-        //var id = ref.key();
-        //console.log("added record with id " + id);
-        //list.$indexFor(id); // returns location in the array
+      QB.createSession({login: user.login, password: user.pass}, function(err, res) {
+        if (res) {
+          console.log("session created");
+          console.log(JSON.stringify(res));
+          qbToken = res.token;
+        }
+        else {
+          console.log(JSON.stringify(err));
+        }
       });
+    };
+    createSession();
+
+    function showStatus(time) {
+      if(!time) {
+        time = 2000;
+      }
+      $scope.showStatus = true;
+      $timeout(function() {
+        $scope.showStatus = false;
+      }, time);
     }
 
-    function readData() {
-      var ref = firebase.database().ref();
-      // download the data into a local object
-      var data = $firebaseArray(ref);
-      alert("reading data");
-      data.$loaded().then(function() {
-        alert("read succ");
-        console.log("loaded record:", data.$id, data);
-       // To iterate the key/value pairs of the object, use angular.forEach()
-       angular.forEach(data, function(value, key) {
-          console.log(key, value);
-       });
-      }).catch(function(err) {
-        console.error(err);
+    function sendMessage(wish) {
+      $scope.disableSend = true;
+      $http({
+        method : "POST",
+        url : "https://api.quickblox.com/chat/Message.json",
+        headers: {
+         'Content-Type': 'application/json',
+         'QB-Token': qbToken
+       },
+       data: wish
+      }).then(function mySuccess(response) {
+        $scope.statusMessage = "Successfully Sent";
+        $scope.wish = {};
+        $scope.disableSend = false;
+        showStatus(2000);
+
+      }, function myError(response) {
+        $scope.statusMessage = "Not able to send your wish. Please try again later";
+        $scope.disableSend = false;
       });
     };
 
     $scope.sendWish = function() {
-      addData($scope.wish);
+      if(qbToken) {
+        var wish = {
+          "chat_dialog_id": "5928073aa28f9a0a5d6087a1",
+          "message": $scope.wish.content,
+          "senderName": $scope.wish.sender,
+          "wish": $scope.wish.content
+        };
+        sendMessage(wish);
+      }
+      else {
+        $scope.statusMessage = "Session expired. Please close and open the app";
+        showStatus(5000);
+      }
     };
 
-    initFirebase();
+
 
   });
 })();

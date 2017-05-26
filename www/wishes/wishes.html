@@ -4,10 +4,10 @@
     <div class="wish-form">
       <div class="list">
         <label class="item item-input">
-          <input type="text" placeholder="Name" ng-model="wish.sender">
+          <input type="text" placeholder="Your name" ng-model="wish.sender">
         </label>
         <label class="item item-input">
-          <textarea placeholder="Your wish" rows="5" ng-model="wish.content"></textarea>
+          <textarea placeholder="Message" rows="5" ng-model="wish.content"></textarea>
         </label>
       </div>
       <button class="button" ng-disabled="!(wish.sender && wish.content) || disableSend" ng-click="sendWish()">
@@ -21,6 +21,7 @@
       <label class="status" ng-if="showStatus">
         {{statusMessage}}
       </label>
+      <ion-spinner icon="android" ng-if="isLoading"></ion-spinner>
     </div>
   </ion-content>
 </ion-view>

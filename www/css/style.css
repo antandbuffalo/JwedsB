@@ -161,7 +161,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#866048', end
   color: #fbda57;
   font-size: 24px;
   text-align: center;
-  font-size: 70px;
+  font-size: 80px;
   margin-top: -10px;
   font-family: italianno;
 }
@@ -176,7 +176,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#866048', end
   margin-top: 15px;
 }
 .time span {
-  font-size: 40px;
+  font-size: 50px;
 }
 
 .remaining-subtitle {
@@ -229,6 +229,7 @@ i.route {
   background: none;
   border-color: #fbda57;
   font-size: 34px;
+  padding: 25px;
 }
 .item.activated {
   background-color: #5f4231;
@@ -256,6 +257,7 @@ i.route {
 }
 .wish-form .item {
   border: 0px;
+  padding: 5px;
 }
 .wish-form button {
   background: #634533;
@@ -301,4 +303,7 @@ input[type="text"] {
   background: #634533;
   padding: 18px;
   border-radius: 10px;
+}
+.spinner-android {
+  stroke: #fbda57;
 }

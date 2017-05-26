@@ -1,6 +1,6 @@
 (function() {
-  angular.module("starter").controller("InvitationClassicController", function($scope) {
-
+  angular.module("starter").controller("InvitationClassicController", function($scope, $stateParams) {
+    $scope.type = $stateParams.type;
     function getBase64Image(path) {
     // Create an empty canvas element
       image = document.createElement('img');

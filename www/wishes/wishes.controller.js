@@ -1,5 +1,5 @@
 (function() {
-  angular.module("starter").controller("WishesController", function($scope, $ionicLoading, $timeout, $http, wishesService, $ionicPlatform) {
+  angular.module("starter").controller("WishesController", function($scope, $ionicLoading, $timeout, $http, wishesService, $ionicPlatform, $state) {
     $scope.wish = {};
     $scope.disableSend = false;
     $scope.showStatus = false;
@@ -127,6 +127,12 @@
       //console.log();
       //alert(fullHeight);
     });
+
+    $scope.wishDetail = function(wish) {
+      wishesService.current = wish;
+      $state.go("wishdetail");
+    };
+
 
   });
 })();

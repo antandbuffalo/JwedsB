@@ -43,6 +43,10 @@ angular.module('starter', ['ionic'])
         url: '/wishes',
         templateUrl: 'wishes/wishes.html',
         controller: 'WishesController'
+    }).state('wishdetail', {
+        url: '/wishdetail',
+        templateUrl: 'wishdetail/wishdetail.html',
+        controller: 'WishdetailController'
     });
   $urlRouterProvider.otherwise('/home-board');
 })

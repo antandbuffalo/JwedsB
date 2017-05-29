@@ -1,6 +1,5 @@
 <ion-view class="bg-gradient-content1">
-  <ion-content>
-    <h1 class="title">J weds B</h1>
+    <h1 class="title" id="titlejb">J weds B</h1>
     <div class="wish-form">
       <div class="list">
         <label class="item item-input">
@@ -14,14 +13,23 @@
         Send
       </button>
       <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <label class="status" ng-if="showStatus">
-        {{statusMessage}}
-      </label>
+      <div class="status" ng-if="showStatus">
+        <label>
+          {{statusMessage}}
+        </label>
+      </div>
       <ion-spinner icon="android" ng-if="isLoading"></ion-spinner>
     </div>
-  </ion-content>
+    <div class="wishes">
+      <div class="list">
+        <div class="item item-avatar" ng-repeat="wish in wishes">
+          <label class="name" ng-bind="wish.senderName"></label>
+          <label class="date">{{wish.created_at | date}}</label>
+          <p class="content">{{wish.message}}</p>
+        </div>
+      </div>
+    </div>
+    <div>
+
+    </div>
 </ion-view>

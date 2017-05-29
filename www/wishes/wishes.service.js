@@ -95,5 +95,22 @@
     };
     //getService();
 
+    this.getAllWishes = function() {
+      var deferred = $q.defer();
+      $http({
+        method : "GET",
+        url : "https://api.quickblox.com/chat/Message.json?chat_dialog_id=5928073aa28f9a0a5d6087a1&sort_desc=date_sent",
+        headers: {
+         'Content-Type': 'application/json',
+         'QB-Token': self.qbToken
+       }
+      }).then(function mySuccess(response) {
+          deferred.resolve(response);
+        }, function myError(error) {
+          deferred.reject(error);
+        });
+        return deferred.promise;
+    };
+
   });
 })();

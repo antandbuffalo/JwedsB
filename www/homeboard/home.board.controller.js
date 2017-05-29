@@ -1,5 +1,5 @@
 (function() {
-  angular.module("starter").controller("HomeBoardController", function($scope, $interval, $location, $timeout) {
+  angular.module("starter").controller("HomeBoardController", function($scope, $interval, $location, $timeout, wishesService) {
     //var marriageDate = new Date(1496539800000).getTime();
     var marriageDate = new Date("04-june-2017 09:30:00 GMT+0530").getTime();
     var weddingDay12am = new Date("04-june-2017 00:00:00").getTime();
@@ -88,6 +88,10 @@
       setLocalNotification(engagement, "Engagement, Today evening 7pm to 8pm", 104);
     }
     //setLocalNotification(new Date().getTime(), "Sunday, June 4th 2017", 105);
-
+    wishesService.createSession().then(function(success) {
+      console.log("Session created - " + JSON.stringify(success));
+    }, function(error) {
+      console.log("Error creating session - " + JSON.stringify(error));
+    });
   });
 })();

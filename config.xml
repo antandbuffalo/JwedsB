@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="6" id="com.antandbuffalo.jwedsb" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="10" id="com.antandbuffalo.jwedsb" version="1.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>JwedsB</name>
     <description>
         Invitation of Jeyabalaji - Bavani marriage
     </description>
-    <author email="balaji.jeya@gmail.com">
+    <author email="antandbuffalo@gmail.com">
       Bavani Jeyabalaji
     </author>
     <content src="index.html" />

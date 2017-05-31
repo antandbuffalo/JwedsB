@@ -1,13 +1,14 @@
 (function() {
   angular.module("starter").controller("HomeBoardController", function($scope, $interval, $location, $timeout, wishesService) {
     //var marriageDate = new Date(1496539800000).getTime();
-    var marriageDate = new Date("04-june-2017 09:30:00 GMT+0530").getTime();
+    var marriageDate = new Date("04-june-2016 09:30:00 GMT+0530").getTime();
     var weddingDay12am = new Date("04-june-2017 00:00:00").getTime();
     var previousDay = new Date("03-june-2017 09:30:00").getTime();
     var previousWeek = new Date("28-may-2017 09:30:00").getTime();
     var engagement = new Date("03-june-2017 10:00:00").getTime();
     var today = new Date().getTime();
-    var nextDay = marriageDate + (1 * 24 * 60 * 60 * 1000);
+    var nextDay = marriageDate + (24 * 60 * 60 * 1000);
+    var voteOfThanks = marriageDate + (1 * 60 * 60 * 1000);
 
     $scope.description = function() {
       $location.path("/home");
@@ -29,7 +30,7 @@
       var remaining = marriageDate - today;
       if(remaining < 0) {
         if(today > nextDay) {
-          $scope.mainContent = "Thanks for your Wishes";
+          $scope.mainContent = "Thanks a lot for your Wishes";
         }
         else {
           $scope.mainContent = "It's Wedding Day";
@@ -95,8 +96,8 @@
     if(engagement >= today) {
       setLocalNotification(engagement, "Engagement, Today evening 7pm to 8pm", 104);
     }
-    if(nextDay >= today) {
-      setLocalNotification(nextDay, "Thanks a lot for your wishes", 105);
+    if(voteOfThanks >= today) {
+      setLocalNotification(voteOfThanks, "Thanks a lot for your wishes 😊", 105);
     }
     //setLocalNotification(new Date().getTime(), "Sunday, June 4th 2017", 105);
     wishesService.createSession().then(function(success) {

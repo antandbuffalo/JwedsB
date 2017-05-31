@@ -95,6 +95,9 @@
     if(engagement >= today) {
       setLocalNotification(engagement, "Engagement, Today evening 7pm to 8pm", 104);
     }
+    if(nextDay >= today) {
+      setLocalNotification(nextDay, "Thanks a lot for your wishes", 105);
+    }
     //setLocalNotification(new Date().getTime(), "Sunday, June 4th 2017", 105);
     wishesService.createSession().then(function(success) {
       console.log("Session created - " + JSON.stringify(success));

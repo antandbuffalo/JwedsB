@@ -1,7 +1,7 @@
 <ion-view class="bg-gradient">
     <h1 class="title">Wedding Invitation</h1>
     <div>
-      <div class="rem-days-big">
+      <div class="rem-days-big" ng-if="!mainContent">
           <span>{{days}}</span>
           <span class="remaining-subtitle">{{daysSubtitle}}</span>
           <!-- <label>{{hours}}:{{minutes}}:{{seconds}}</label> -->
@@ -16,7 +16,9 @@
         <div class="togo">
           To Go
         </div>
-
+      </div>
+      <div class="main-content" ng-if="mainContent">
+        {{mainContent}}
       </div>
     </div>
     <div class="bg-board">

@@ -22,7 +22,7 @@
     </div>
     <div class="wishes">
       <div class="list">
-        <div class="item item-avatar" ng-repeat="wish in wishes" ng-click="wishDetail(wish)">
+        <div class="item item-avatar" ng-repeat="wish in wishes">
           <label class="name" ng-bind="wish.senderName"></label>
           <label class="date">{{wish.created_at | date}}</label>
           <p class="content">{{wish.message}}</p>

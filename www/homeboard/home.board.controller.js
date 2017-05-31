@@ -7,6 +7,7 @@
     var previousWeek = new Date("28-may-2017 09:30:00").getTime();
     var engagement = new Date("03-june-2017 10:00:00").getTime();
     var today = new Date().getTime();
+    var nextDay = marriageDate + (1 * 24 * 60 * 60 * 1000);
 
     $scope.description = function() {
       $location.path("/home");
@@ -27,14 +28,21 @@
       today = new Date().getTime();
       var remaining = marriageDate - today;
       if(remaining < 0) {
-        $scope.days = 0;
-        $scope.hours = 0;
-        $scope.minutes = 0;
-        $scope.seconds = 0;
-        $scope.remaining = "0 day to go";
-        $scope.daysSubtitle = "day";
+        if(today > nextDay) {
+          $scope.mainContent = "Thanks for your Wishes";
+        }
+        else {
+          $scope.mainContent = "It's Wedding Day";
+          $scope.days = 0;
+          $scope.hours = 0;
+          $scope.minutes = 0;
+          $scope.seconds = 0;
+          $scope.remaining = "0 day to go";
+          $scope.daysSubtitle = "day";
+        }
         return;
       }
+      $scope.mainContent = null;
       var days = parseInt(remaining / ONE_DAY);
 
       var daysRemainder = remaining % ONE_DAY;

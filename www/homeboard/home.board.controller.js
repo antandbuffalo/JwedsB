@@ -1,7 +1,7 @@
 (function() {
   angular.module("starter").controller("HomeBoardController", function($scope, $interval, $location, $timeout, wishesService) {
     //var marriageDate = new Date(1496539800000).getTime();
-    var marriageDate = new Date("04-june-2016 09:30:00 GMT+0530").getTime();
+    var marriageDate = new Date("04-june-2017 09:30:00 GMT+0530").getTime();
     var weddingDay12am = new Date("04-june-2017 00:00:00").getTime();
     var previousDay = new Date("03-june-2017 09:30:00").getTime();
     var previousWeek = new Date("28-may-2017 09:30:00").getTime();
@@ -83,6 +83,7 @@
         });
       }, 1000);
     };
+    //just
 
     if(weddingDay12am >= today) {
       setLocalNotification(weddingDay12am, "Today, 9:30am to 10:30am", 101);

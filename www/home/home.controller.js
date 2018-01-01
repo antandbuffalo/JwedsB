@@ -1,5 +1,17 @@
 (function() {
-  angular.module("starter").controller("HomeController", function($scope) {
+  angular.module("starter").controller("HomeController", function($scope, constant) {
+    $scope.mainTitle = constant.MAIN_TITLE;
+    $scope.phrase1 = constant.PHRASE_1;
+    $scope.groomName = constant.GROOM_NAME;
+    $scope.brideName = constant.BRIDE_NAME;    
+    $scope.nameConjunction = constant.NAME_CONJUNCTION;
+    $scope.dateTimePhrase = constant.DATE_TIME_PHRASE;
+    $scope.marriageDisplayDate = constant.MARRIAGE_DISPLAY_DATE;
+    $scope.marriageDisplayTime = constant.MARRIAGE_DISPLAY_TIME;
+    $scope.engagementDisplayDate = constant.ENGAGEMENT_DISPLAY_DATE;
+    $scope.engagementDisplayTime = constant.ENGAGEMENT_DISPLAY_TIME;
+
+
     $scope.goBack = function() {
       alert("sadf");
       window.history.back();

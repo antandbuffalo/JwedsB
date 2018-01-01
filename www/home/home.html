@@ -1,34 +1,25 @@
 <ion-view class="bg-gradient-content1">
   <ion-content>
-    <h1 class="title">J weds B</h1>
+    <h1 class="title" ng-bind="mainTitle"></h1>
     <div class="invitation-content">
-      I have never seen her till then.
-      <br>
-      Never knew she was right there in my neighborhood.
-      <br>
-      But when I met her, I knew this is for life.
-      <br>
-      <br>
-
-      Request the pleasure of your company at the celebration of our wedding
-
+      {{phrase1}}
       <h3>
         <br>
         <div class="naming">
-          T M Jeyabalaji
+          {{groomName}}
           <br>
-          with
+          {{nameConjunction}}
           <br>
-          M L Bavani
+          {{brideName}}
         </div>
         <br>
-        With our parents' blessings we are stepping into our new life, together, on
+        {{dateTimePhrase}}
         <br>
-        Sunday, 4th June 2017
+        {{marriageDisplayDate}}
         <br>
         Muhurtham
         <br>
-        9.30 AM to 10.30 AM
+        {{marriageDisplayTime}}
       </h3>
     </div>
 
@@ -37,8 +28,8 @@
           Engagement
         </label>
          <br />
-         Saturday, 3rd June 2017, <br />
-         7 PM to 8 PM <br />
+         {{engagementDisplayDate}} <br />
+         {{engagementDisplayTime}} <br />
       </div>
       <br />
     </div>

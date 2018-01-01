@@ -1,21 +1,21 @@
 (function() {
   angular.module("starter").controller("HomeBoardController", function($scope, $interval, $location, $timeout, wishesService, constant) {
     var marriageDate = constant.MARRIAGE_DATE;
-    var weddingDay12am = new Date("04-june-2017 00:00:00").getTime();
-    var previousDay = new Date("03-june-2017 09:30:00").getTime();
-    var previousWeek = new Date("28-may-2017 09:30:00").getTime();
-    var engagement = new Date("03-june-2017 10:00:00").getTime();
-    var today = new Date().getTime();
-    var nextDay = marriageDate + (24 * 60 * 60 * 1000);
-    var voteOfThanks = marriageDate + (1 * 60 * 60 * 1000);
+    var weddingDay12am = constant.WEDDING_DAY_12AM;
+    var previousDay = constant.PREVIOUS_DAY;
+    var previousWeek = constant.PREVIOUS_WEEK;
+    var engagement = constant.ENGAGEMENT;
+    var today = constant.TODAY;
+    var nextDay = constant.NEXT_DAY;
+    var voteOfThanks = constant.VOTE_OF_THANKS;
 
     $scope.description = function() {
       $location.path("/home");
     };
 
-    var ONE_DAY = 24 * 60 * 60 * 1000;
-    var ONE_HOUR = 60 * 60 * 1000;
-    var ONE_SEC = 60 * 1000;
+    var ONE_DAY = constant.ONE_DAY;
+    var ONE_HOUR = constant.ONE_HOUR;
+    var ONE_MIN = constant.ONE_MIN;
 
     function makeItTwoDigit(input) {
       if(input < 10) {
@@ -49,9 +49,9 @@
       var hours = makeItTwoDigit(parseInt(daysRemainder / ONE_HOUR));
 
       var hoursRemaining = daysRemainder % ONE_HOUR;
-      var minutes = makeItTwoDigit(parseInt(hoursRemaining / ONE_SEC));
+      var minutes = makeItTwoDigit(parseInt(hoursRemaining / ONE_MIN));
 
-      var minutesRemaining = hoursRemaining % ONE_SEC;
+      var minutesRemaining = hoursRemaining % ONE_MIN;
       var seconds = makeItTwoDigit(parseInt(minutesRemaining / 1000));
 
       $scope.remaining = hours +":" + minutes +":" + seconds;
